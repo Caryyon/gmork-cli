@@ -1,3 +1,9 @@
+use std::process::Command;
+
 pub fn init() {
-    println!("This is from the init function");
+    let setup_gmork = Command::new("node")
+        .arg("-v")
+        .spawn()
+        .expect("failed to execute");
+    setup_gmork.stdout;
 }
