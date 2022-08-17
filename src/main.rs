@@ -11,7 +11,6 @@
  *
  *
  */
-
 use clap::Parser;
 
 // lets try and keep the main features needed to run in core_commands
@@ -34,8 +33,7 @@ fn main() {
    let args = Args::parse();
    match args {
        Args { init: true} => {
-           println!("The init flag has been passed");
-           init();
+           init().unwrap()
        },
        _ => {
            println!("I don't know that command, are you sure that's right?");
